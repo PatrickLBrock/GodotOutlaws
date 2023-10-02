@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://466j1hdi3b5u"]
+
+[ext_resource type="PackedScene" uid="uid://cvqid05oamsap" path="res://environemnt.tscn" id="1_8a65y"]
+[ext_resource type="PackedScene" uid="uid://cbsjs7hewn6yt" path="res://player.tscn" id="2_q7fo1"]
+
+[node name="Node" type="Node"]
+
+[node name="StaticBody3D" parent="." instance=ExtResource("1_8a65y")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.698952, 0.715168, 0, -0.715168, -0.698952, 0, 7, 0)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_q7fo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7652, -1)

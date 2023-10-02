@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbsjs7hewn6yt"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_wsuyo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ludus"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17gqf"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("CameraNode")]
+script = ExtResource("1_wsuyo")
+speed = 10
+fall_acceleration = 10
+CameraNode = NodePath("")
+
+[node name="LookNode" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="LookNode"]
+mesh = SubResource("CapsuleMesh_ludus")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_17gqf")
+
+[node name="CameraYAxis" type="Node3D" parent="."]
+
+[node name="CameraXAxis" type="Node3D" parent="CameraYAxis"]
+transform = Transform3D(1, 0, 0, 0, 0.788011, 0.615661, 0, -0.615661, 0.788011, 0, 0, 0)
+
+[node name="CharCamera" type="Camera3D" parent="CameraYAxis/CameraXAxis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
