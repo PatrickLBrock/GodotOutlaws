@@ -1,18 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv1w7hhf46vjf"]
+[gd_scene load_steps=4 format=3 uid="uid://cv1w7hhf46vjf"]
 
 [ext_resource type="Texture2D" uid="uid://dcr65280x14fb" path="res://icon.svg" id="1_nw6kg"]
+[ext_resource type="Script" path="res://mobileJoystick.gd" id="1_yyvhf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n6cd1"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_uww5l"]
+radius = 57.85
 
-[node name="Mobile Controls" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_yyvhf")
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2(40, 494)
+position = Vector2(172, 264)
 texture_normal = ExtResource("1_nw6kg")
-shape = SubResource("CircleShape2D_n6cd1")
+shape = SubResource("CircleShape2D_uww5l")

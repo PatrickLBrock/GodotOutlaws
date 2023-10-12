@@ -6,11 +6,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17gqf"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("CameraNode")]
+[node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_wsuyo")
 speed = 10
 fall_acceleration = 10
-CameraNode = NodePath("")
 
 [node name="LookNode" type="Node3D" parent="."]
 
