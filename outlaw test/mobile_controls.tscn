@@ -9,7 +9,12 @@ radius = 57.85
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_yyvhf")
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="MoveButton" type="TouchScreenButton" parent="."]
 position = Vector2(172, 264)
+texture_normal = ExtResource("1_nw6kg")
+shape = SubResource("CircleShape2D_uww5l")
+
+[node name="CameraButton" type="TouchScreenButton" parent="."]
+position = Vector2(905, 264)
 texture_normal = ExtResource("1_nw6kg")
 shape = SubResource("CircleShape2D_uww5l")
