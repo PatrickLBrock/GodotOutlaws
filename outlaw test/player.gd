@@ -13,6 +13,8 @@ var target_velocity = Vector3.ZERO
 
 var input_direction = Vector3.ZERO
 
+var input_cam = Vector3.ZERO
+
 
 func _physics_process(delta):
 	
@@ -27,6 +29,8 @@ func _physics_process(delta):
 	direction = ($CameraYAxis.basis * Vector3(input_direction.x, 0,input_direction.y)).normalized()
 
 	#$LookNode.look_at(position + direction, Vector3.UP)
+
+	cameraMove(input_cam)
 
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
@@ -44,24 +48,23 @@ func _physics_process(delta):
 func cameraMove(mouseVec):
 	#rotate camera left and right
 	
-	#$CameraYAxis.rotate(Vector3(0,1,0), -mouseVec.x / 5000)
+	$CameraYAxis.rotate(Vector3(0,1,0), -mouseVec.x / 500)
 	
 	#rotate camera up and down
 	#if($CameraYAxis/CameraXAxis.basis.x > -38):
 	#print(mouseVec.y)
 	if mouseVec.y > 0 && Quaternion($CameraYAxis/CameraXAxis.basis).x < 0.3:
 		print("down")
-		#$CameraYAxis/CameraXAxis.rotate(Vector3(1,0,0), mouseVec.y / 6000)
+		$CameraYAxis/CameraXAxis.rotate(Vector3(1,0,0), mouseVec.y / 600)
 	elif mouseVec.y < 0 && Quaternion($CameraYAxis/CameraXAxis.basis).x > -0.45:
 		print("up")
-		#$CameraYAxis/CameraXAxis.rotate(Vector3(1,0,0), mouseVec.y / 6000)
-	else:
-		print("no verti al movement")
-	#$CameraYAxis/CameraXAxis.rotate(Vector3(1,0,0), mouseVec.y / 6000)
+		$CameraYAxis/CameraXAxis.rotate(Vector3(1,0,0), mouseVec.y / 600)
+	#else:
+		#print("no verti al movement")
 
-func _input(event):
-	if event is InputEventMouseMotion:
-		mouseMovement = event.velocity
+#func _input(event):
+	#if event is InputEventMouseMotion:
+		#mouseMovement = event.velocity
 		#cameraMove(mouseMovement)
 
 
@@ -69,3 +72,8 @@ func _input(event):
 func _on_canvas_layer_button_move_player(move_vector):
 	print(move_vector)
 	input_direction = Vector3 (move_vector.x, move_vector.y, 0)
+
+
+func _on_canvas_layer_buttom_move_camera(cam_vector):
+	print(cam_vector)
+	input_cam = Vector3 (cam_vector.x, cam_vector.y, 0)

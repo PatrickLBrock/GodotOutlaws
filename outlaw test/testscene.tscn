@@ -16,4 +16,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7652, -1)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_8ryc6")]
 
+[connection signal="buttom_move_camera" from="CanvasLayer" to="CharacterBody3D" method="_on_canvas_layer_buttom_move_camera"]
 [connection signal="button_move_player" from="CanvasLayer" to="CharacterBody3D" method="_on_canvas_layer_button_move_player"]
