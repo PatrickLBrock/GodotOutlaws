@@ -18,6 +18,8 @@ func _input(event):
 		else:
 			var cam_vector = Vector3.ZERO
 			emit_signal("buttom_move_camera", cam_vector)
+		if $ShootButton.is_pressed():
+			print("shooting")
 
 func calculate_move_vector(event_position):
 	var button_radius = $MoveButton.shape.get_radius()

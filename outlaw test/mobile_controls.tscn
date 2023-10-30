@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv1w7hhf46vjf"]
+[gd_scene load_steps=5 format=3 uid="uid://cv1w7hhf46vjf"]
 
 [ext_resource type="Texture2D" uid="uid://dcr65280x14fb" path="res://icon.svg" id="1_nw6kg"]
 [ext_resource type="Script" path="res://mobileJoystick.gd" id="1_yyvhf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uww5l"]
 radius = 57.85
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_onkmu"]
+radius = 59.7
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_yyvhf")
@@ -18,3 +21,9 @@ shape = SubResource("CircleShape2D_uww5l")
 position = Vector2(905, 264)
 texture_normal = ExtResource("1_nw6kg")
 shape = SubResource("CircleShape2D_uww5l")
+
+[node name="ShootButton" type="TouchScreenButton" parent="."]
+position = Vector2(1042, 214)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_nw6kg")
+shape = SubResource("CircleShape2D_onkmu")
